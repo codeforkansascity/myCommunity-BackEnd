@@ -1,0 +1,38 @@
+// group 'my_community'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'eclipse'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+String dropwizardVersion = '1.1.0'
+
+project(':my_community_models') {
+    dependencies {
+        compile 'io.dropwizard:dropwizard-core:' + dropwizardVersion
+        compile group: 'org.mongodb.morphia', name: 'morphia', version: '0.107'
+    }
+}
+
+project(':my_community_service') {
+    apply plugin: 'application'
+
+    dependencies {
+        compile project(':my_community_models')
+
+        compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+        compile 'commons-lang:commons-lang:2.6'
+        compile 'io.dropwizard:dropwizard-core:' + dropwizardVersion
+        compile 'io.dropwizard:dropwizard-auth:' + dropwizardVersion
+        compile 'io.dropwizard:dropwizard-client:' + dropwizardVersion
+        compile 'io.dropwizard:dropwizard-jdbi:' + dropwizardVersion
+        compile 'com.google.inject:guice:4.0-beta5'
+    }
+}

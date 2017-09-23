@@ -1,0 +1,3 @@
+rootProject.name = 'mycommunity'
+include 'my_community_models', 'my_community_service'
+
