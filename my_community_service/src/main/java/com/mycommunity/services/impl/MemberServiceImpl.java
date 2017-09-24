@@ -1,13 +1,23 @@
 package com.mycommunity.services.impl;
 
+import com.mycommunity.models.CommunityMember;
 import com.mycommunity.services.MemberService;
 
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+public class MemberServiceImpl implements MemberService {
 
-@Path("/communityMember")
-@Produces(MediaType.APPLICATION_JSON)
-public class MemberServiceImpl {
-    private MemberService memberService = new MemberServiceImpl();
+
+    @Override
+    public void addMember(CommunityMember member) {
+
+    }
+
+    @Override
+    public void updateMember(CommunityMember member) {
+
+    }
+
+    @Override
+    public void deleteMember(String memberId) {
+
+    }
 }

@@ -5,7 +5,7 @@ import com.mycommunity.models.CommunityMember;
 public interface MemberStore {
     void create(final CommunityMember member);
 
-    CommunityMember update(final CommunityMember member);
+    void update(final CommunityMember member);
 
-    void delete(CommunityMember member);
+    void delete(final CommunityMember member);
 }
